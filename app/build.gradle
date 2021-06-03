@@ -1,0 +1,112 @@
+apply plugin: 'com.android.application'
+apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-android-extensions'
+
+// -> This plugin is for adding Google Services
+apply plugin: 'com.google.gms.google-services'
+
+// -> This plugin is applied for _________.
+apply plugin: "kotlin-kapt"
+
+
+android {
+    compileSdkVersion 30
+    buildToolsVersion "30.0.2"
+
+    defaultConfig {
+        applicationId "io.github.praanto__samadder.cocoa"
+        minSdkVersion 29
+        targetSdkVersion 30
+        versionCode 1
+        versionName "1.0.1-Beta"
+
+        javaCompileOptions {
+            annotationProcessorOptions {
+                arguments += [
+                        "room.schemaLocation":"$projectDir/schemas".toString(),
+                        "room.incremental":"true",
+                        "room.expandProjection":"true"]
+            }
+        }
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+
+    // Enable DataBinding
+    buildFeatures {
+        dataBinding true
+    }
+}
+
+dependencies {
+    implementation 'androidx.legacy:legacy-support-v4:1.0.0'
+    def lifecycle_version = "2.2.0"
+
+    implementation 'androidx.cardview:cardview:1.0.0'
+    implementation 'androidx.recyclerview:recyclerview:1.1.0'
+    implementation 'com.google.android.material:material:1.2.1'
+
+    implementation fileTree(dir: "libs", include: ["*.jar"])
+    implementation "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
+    implementation 'androidx.core:core-ktx:1.3.2'
+    implementation 'androidx.appcompat:appcompat:1.2.0'
+    implementation 'androidx.constraintlayout:constraintlayout:2.0.4'
+
+    // -> Firebase components
+    implementation "com.google.firebase:firebase-auth-ktx:20.0.1"
+    implementation "com.google.firebase:firebase-firestore-ktx:22.0.0"
+
+    // -> ViewModel
+    implementation "androidx.lifecycle:lifecycle-viewmodel-ktx:$lifecycle_version"
+
+    // -> LiveData
+    implementation "androidx.lifecycle:lifecycle-livedata-ktx:$lifecycle_version"
+
+    // Android Navigation
+    implementation 'androidx.navigation:navigation-fragment-ktx:2.3.2'
+    implementation 'androidx.navigation:navigation-ui-ktx:2.3.2'
+
+    // -> Room components
+    implementation "androidx.room:room-runtime:2.3.0-alpha03"
+    kapt "androidx.room:room-compiler:2.3.0-alpha03"
+    /* Add support for coroutines */
+    implementation "androidx.room:room-ktx:2.3.0-alpha03"
+
+    // -> Saved state module for ViewModel
+    implementation "androidx.lifecycle:lifecycle-viewmodel-savedstate:$lifecycle_version"
+
+    // -> Annotation processor: The annotation (@Calls) processor is used for Room
+    implementation "androidx.lifecycle:lifecycle-common-java8:$lifecycle_version"
+
+    // -> Kotlin Coroutines
+    api "org.jetbrains.kotlinx:kotlinx-coroutines-core:1.4.1"
+    api "org.jetbrains.kotlinx:kotlinx-coroutines-android:1.4.1"
+
+    // Toasty
+    implementation 'com.github.GrenderG:Toasty:1.5.0'
+
+    // Test
+    testImplementation 'junit:junit:4.13'
+    androidTestImplementation 'androidx.test.ext:junit:1.1.2'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.3.0'
+
+    // -> Paging components
+    implementation "androidx.paging:paging-runtime-ktx:3.0.0-alpha10"
+
+    /* -> Room testing helpers */
+    testImplementation "androidx.room:room-testing:2.2.5"
+
+    // -> debugImplementation because LeakCanary should only run in debug builds.
+    debugImplementation 'com.squareup.leakcanary:leakcanary-android:2.5'
+
+    // -> Hamcrest for assertions
+    testImplementation 'org.hamcrest:hamcrest:2.2'
+
+}

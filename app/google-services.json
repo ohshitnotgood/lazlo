@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "309236258567",
+    "firebase_url": "https://cocoa-85a6f.firebaseio.com",
+    "project_id": "cocoa-85a6f",
+    "storage_bucket": "cocoa-85a6f.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:309236258567:android:594019f3c300fd0db197a2",
+        "android_client_info": {
+          "package_name": "io.github.praanto__samadder.cocoa"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "309236258567-rupl0m92easunmhrck915e8bmqv4qei9.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCeUnCPL64NvTECkVT6Ki0l9g0kvsMZE1I"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "309236258567-rupl0m92easunmhrck915e8bmqv4qei9.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

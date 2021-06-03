@@ -1,0 +1,176 @@
+<resources>
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@android:color/black</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+
+        <item name="android:statusBarColor">@android:color/black</item>
+        <item name="android:navigationBarColor">@android:color/black</item>
+
+        <item name="android:windowContentTransitions">true</item>
+    </style>
+
+    <style name="UniversalLoginForm" parent="Theme.AppCompat.Light.NoActionBar">
+
+        <item name="android:statusBarColor">@android:color/black</item>
+        <item name="android:navigationBarColor">@android:color/black</item>
+
+
+        <item name="android:windowContentTransitions">@null</item>
+    </style>
+
+    <style name="DashboardActivityTheme" parent="Theme.AppCompat.Light.NoActionBar">
+        <item name="android:statusBarColor">@android:color/black</item>
+        <item name="android:navigationBarColor">@android:color/black</item>
+    </style>
+
+    <style name="BottomNavTheme" parent="Theme.AppCompat.Light">
+        <item name="fontFamily">@font/sf_pro_display_semibold</item>
+        <item name="colorPrimary">@color/tabActiveColor</item>
+        <item name="android:textColorSecondary">@color/tabInactiveColor</item>
+        <item name="android:textSize">12.6sp</item>
+    </style>
+
+    <style name="DatePicker" parent="Theme.AppCompat.Light.NoActionBar">
+        <item name="android:colorPrimary">@color/rvRecordColor</item>
+        <item name="android:colorSecondary">@color/rvRecordColor</item>
+        <item name="android:colorAccent">@color/rvRecordColor</item>
+        <item name="android:textColorPrimary">@color/rvRecordColor</item>
+    </style>
+
+    <style name="CustomDatePicker">
+        <item name="android:fontFamily">@font/sf_pro_display_medium</item>
+        <item name="android:textSize">22sp</item>
+        <item name="android:textColor">@color/customTimePickerSelectedLabelColor</item>
+        <item name="android:textAlignment">center</item>
+    </style>
+
+    <style name="CustomDatePicker.Inactive" parent="CustomDatePicker">
+        <item name="android:textColor">@color/customTimePickerDeselectedLabelColor</item>
+    </style>
+
+    <style name="CalendarViewTheme" parent="Theme.AppCompat">
+        <item name="colorAccent">#215AB8</item>
+        <item name="colorPrimary">@color/calendarColorPrimary</item>
+        <item name="fontFamily">@font/sf_pro_display_regular</item>
+    </style>
+
+    <style name="CalendarViewDateText" parent="android:TextAppearance.DeviceDefault.Small">
+        <item name="android:textColor">@color/calendarViewDateTextColor</item>
+    </style>
+    
+    <style name="CalendarViewWeekText" parent="android:TextAppearance.DeviceDefault.Small">
+        <item name="android:textColor">@color/calendarViewWeekTextColor</item>
+    </style>
+
+    <style name="TaskEditor" parent="Theme.AppCompat.Light.NoActionBar">
+        <item name="android:navigationBarColor">@color/taskEditorBackground</item>
+    </style>
+
+    <style name="TaskEditorEditTexts">
+        <item name="android:background">@drawable/calendar_select_background</item>
+        <item name="android:textColor">@android:color/white</item>
+        <item name="android:textColorHint">#8C8C8C</item>
+        <item name="android:textSize">12sp</item>
+        <item name="android:fontFamily">@font/sf_pro_display_medium</item>
+        <item name="android:inputType">textCapWords</item>
+        <item name="android:paddingVertical">15dp</item>
+        <item name="android:paddingHorizontal">25dp</item>
+    </style>
+
+    <style name="BottomLineTaskEditor">
+        <item name="android:src">@drawable/ic_card_bottom_line</item>
+        <item name="android:scaleType">fitXY</item>
+        <item name="android:layout_marginHorizontal">20dp</item>
+    </style>
+
+    <style name="TaskEditorDescriptionText">
+        <item name="android:textSize">12sp</item>
+        <item name="android:textColor">#7C7C7C</item>
+        <item name="android:layout_marginHorizontal">35dp</item>
+        <item name="android:fontFamily">@font/sf_pro_display_medium</item>
+        <item name="android:justificationMode">inter_word</item>
+    </style>
+
+
+    <style name="LoginActivityTextView">
+        <item name="android:fontFamily">@font/sf_pro_display_semibold</item>
+        <item name="android:textSize">29sp</item>
+        <item name="android:textColor">@android:color/black</item>
+    </style>
+
+    <!-- Universal Login Form Activity Scene One -->
+    <style name="UniversalSceneOne">
+        <item name="android:textColor">@android:color/white</item>
+    </style>
+
+    <style name="UniversalSceneOne.Title">
+        <item name="android:text">@string/uni_form_title</item>
+        <item name="android:fontFamily">@font/sf_pro_display_bold</item>
+        <item name="android:textSize">32sp</item>
+        <item name="android:textAlignment">center</item>
+    </style>
+
+    <style name="UniversalSceneOne.Subtitle">
+        <item name="android:fontFamily">@font/sf_pro_display_regular</item>
+        <item name="android:textSize">15sp</item>
+        <item name="android:textAlignment">center</item>
+        <item name="android:paddingHorizontal">20dp</item>
+        <item name="android:text">@string/uni_form_subtitle</item>
+    </style>
+
+    <style name="UniversalSceneOne.ButtonText">
+        <item name="android:fontFamily">@font/sf_pro_display_bold</item>
+        <item name="android:text">@string/uni_btn_get_started</item>
+        <item name="android:textColor">@android:color/black</item>
+        <item name="android:layout_gravity">center</item>
+        <item name="android:textSize">16sp</item>
+        <item name="android:paddingVertical">17dp</item>
+    </style>
+
+    <style name="UniversalSceneOne.EditText">
+        <item name="android:fontFamily">@font/sf_pro_display_regular</item>
+        <item name="android:textColor">@android:color/white</item>
+        <item name="android:textSize">16sp</item>
+        <item name="android:paddingHorizontal">20dp</item>
+        <item name="android:paddingVertical">17dp</item>
+        <item name="android:textColorHint">#8E8E8E</item>
+    </style>
+
+
+    <!-- Universal Login Form Activity Scene Two -->
+    <style name="UniversalSceneTwo">
+        <item name="android:text">@string/uni_form_title</item>
+        <item name="android:textColor">@android:color/white</item>
+    </style>
+
+    <style name="UniversalSceneTwo.Title">
+        <item name="android:fontFamily">@font/sf_pro_display_bold</item>
+        <item name="android:textSize">28sp</item>
+    </style>
+
+    <style name="UniversalSceneTwo.Subtitle">
+        <item name="android:fontFamily">@font/sf_pro_display_regular</item>
+        <item name="android:textSize">15sp</item>
+        <item name="android:textAlignment">center</item>
+        <item name="android:paddingHorizontal">20dp</item>
+        <item name="android:paddingTop">10dp</item>
+        <item name="android:text">@string/uni_form_subtitle</item>
+    </style>
+
+    <style name="UniversalSceneTwo.ButtonText">
+        <item name="android:fontFamily">@font/sf_pro_display_bold</item>
+        <item name="android:text">@string/uni_btn_get_started</item>
+        <item name="android:textColor">@android:color/black</item>
+        <item name="android:layout_gravity">center</item>
+        <item name="android:textSize">16sp</item>
+        <item name="android:paddingVertical">17dp</item>
+    </style>
+
+
+
+
+
+</resources>

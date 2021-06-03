@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<MotionScene 
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:motion="http://schemas.android.com/apk/res-auto">
+
+    <Transition
+        motion:constraintSetEnd="@+id/end"
+        motion:constraintSetStart="@id/start"
+        motion:duration="200">
+       <KeyFrameSet>
+       </KeyFrameSet>
+        <OnClick
+            motion:targetId="@id/day_middle"
+            motion:clickAction="transitionToEnd"/>
+
+    </Transition>
+
+    <ConstraintSet android:id="@+id/start">
+
+
+    </ConstraintSet>
+
+    <ConstraintSet android:id="@+id/end">
+
+    <!--    Animate bottom text to center of screen and bottom hidden text should follow    -->\
+        <Constraint
+            android:id="@+id/day_bottom"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            motion:layout_constraintBottom_toBottomOf="parent"
+            motion:layout_constraintStart_toStartOf="parent"
+            motion:layout_constraintEnd_toEndOf="parent"
+            motion:layout_constraintTop_toTopOf="parent" />
+
+    <!--    Change middle text to have attributes of top text  -->
+
+        <Constraint
+            android:id="@+id/day_middle"
+            motion:layout_constraintBottom_toTopOf="@+id/day_bottom"
+            android:layout_marginBottom="25dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+
+    <!--    Change top text to have attributes of top hidden text-->
+
+        <Constraint
+            android:id="@+id/day_top"
+            motion:layout_constraintBottom_toTopOf="@id/day_middle"
+            android:visibility="gone"/>
+
+<!--        Move top hidden text to bottom hidden text and give attributes of bottom hidden text-->
+
+        <Constraint
+            android:id="@+id/day_top_inv"
+            motion:layout_constraintTop_toBottomOf="@+id/day_bottom_inv"
+            android:visibility="visible"/>
+
+    </ConstraintSet>
+</MotionScene>

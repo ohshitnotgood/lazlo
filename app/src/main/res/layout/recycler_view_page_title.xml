@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:paddingVertical="20dp"
+    android:background="@android:color/black">
+
+    <TextView
+        android:id="@+id/tvTabTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_centerVertical="true"
+        android:layout_marginStart="13dp"
+        android:layout_toStartOf="@+id/btnAddNewRecord"
+        android:fontFamily="@font/sf_pro_display_bold"
+        android:text="@string/btP3"
+        android:textColor="@color/rvTitleColor"
+        android:textSize="30sp" />
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/btnAddNewRecord"
+        android:layout_width="28dp"
+        android:layout_height="28dp"
+        android:layout_alignParentEnd="true"
+        android:layout_centerVertical="true"
+        android:layout_marginEnd="17dp"
+        app:cardCornerRadius="322dp"
+        android:backgroundTint="#434343">
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:src="@drawable/ic_plus"
+            android:contentDescription="@string/userProfileDesc" />
+
+    </androidx.cardview.widget.CardView>
+
+
+</RelativeLayout>

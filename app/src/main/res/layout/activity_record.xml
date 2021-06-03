@@ -1,0 +1,387 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+        <variable
+            name="viewModel"
+            type="io.github.praanto__samadder.cocoa.experimental.Experimental" />
+    </data>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/pagerRecyclerView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+        android:background="@color/taskEditorBackground"/>
+
+
+<!--    <androidx.constraintlayout.motion.widget.MotionLayout-->
+<!--        android:id="@+id/rootLayout"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="match_parent"-->
+<!--        android:background="@color/taskEditorBackground"-->
+<!--        app:layoutDescription="@xml/activity_record_xml_root_layout_scene">-->
+
+<!--        &lt;!&ndash; Top heading bar &ndash;&gt;-->
+<!--        <LinearLayout-->
+<!--            android:id="@+id/topHeader"-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:background="@android:color/black"-->
+<!--            android:paddingTop="5dp"-->
+<!--            app:layout_constraintEnd_toEndOf="parent"-->
+<!--            app:layout_constraintStart_toStartOf="parent"-->
+<!--            app:layout_constraintTop_toTopOf="parent">-->
+
+<!--            <RelativeLayout-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:background="@drawable/top_header_background"-->
+<!--                android:paddingBottom="10dp">-->
+
+<!--                <Button-->
+<!--                    android:id="@+id/btnCancel"-->
+<!--                    android:layout_width="wrap_content"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:layout_alignStart="@+id/tvNewTaskPageTitle"-->
+<!--                    android:layout_alignParentStart="true"-->
+<!--                    android:layout_centerVertical="true"-->
+<!--                    android:background="@android:color/transparent"-->
+<!--                    android:fontFamily="@font/sf_pro_display_regular"-->
+<!--                    android:text="@string/btnCancel"-->
+<!--                    android:textAllCaps="false"-->
+<!--                    android:textColor="@color/UIKitBlue"-->
+<!--                    android:textSize="16sp" />-->
+
+
+<!--                <TextView-->
+<!--                    android:id="@+id/tvNewTaskPageTitle"-->
+<!--                    android:layout_width="wrap_content"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:layout_centerInParent="true"-->
+<!--                    android:fontFamily="@font/sf_pro_display_bold"-->
+<!--                    android:text="@string/add_new_record"-->
+<!--                    android:textColor="@android:color/white"-->
+<!--                    android:textSize="16sp" />-->
+
+<!--                <Button-->
+<!--                    android:id="@+id/btnSaveTask"-->
+<!--                    android:layout_width="wrap_content"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:layout_alignEnd="@+id/tvNewTaskPageTitle"-->
+<!--                    android:layout_alignParentEnd="true"-->
+<!--                    android:layout_centerVertical="true"-->
+<!--                    android:background="@android:color/transparent"-->
+<!--                    android:fontFamily="@font/sf_pro_display_bold"-->
+<!--                    android:text="@string/btnSaveTask"-->
+<!--                    android:textAllCaps="false"-->
+<!--                    android:textColor="@color/UIKitBlue"-->
+<!--                    android:textSize="16sp" />-->
+<!--            </RelativeLayout>-->
+
+
+<!--        </LinearLayout>-->
+
+<!--        <LinearLayout-->
+<!--            android:id="@+id/dataFieldParent"-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="600dp"-->
+<!--            android:layout_marginTop="10dp"-->
+<!--            android:orientation="vertical"-->
+<!--            app:layout_constraintEnd_toEndOf="parent"-->
+<!--            app:layout_constraintHorizontal_bias="0.0"-->
+<!--            app:layout_constraintStart_toStartOf="parent"-->
+<!--            app:layout_constraintTop_toBottomOf="@+id/topHeader">-->
+
+<!--            <EditText-->
+<!--                android:id="@+id/et_title"-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="40dp"-->
+<!--                android:layout_marginTop="10dp"-->
+<!--                android:background="@drawable/calendar_select_background"-->
+<!--                android:fontFamily="@font/sf_pro_display_medium"-->
+<!--                android:hint="@string/record_title"-->
+<!--                android:importantForAutofill="no"-->
+<!--                android:inputType="textCapWords"-->
+<!--                android:paddingHorizontal="20dp"-->
+<!--                android:paddingVertical="10dp"-->
+<!--                android:textColor="@android:color/white"-->
+<!--                android:textColorHint="#8C8C8C"-->
+<!--                android:textSize="12sp" />-->
+
+<!--            <LinearLayout-->
+<!--                android:id="@+id/assignedFieldBackground"-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:layout_marginTop="15dp"-->
+<!--                android:background="@drawable/calendar_select_background"-->
+<!--                android:clickable="true"-->
+<!--                android:onClick="@{() -> viewModel.onDateAssignLayoutClick()}"-->
+<!--                android:paddingVertical="10dp"-->
+<!--                android:weightSum="10">-->
+
+<!--                <TextView-->
+<!--                    android:layout_width="wrap_content"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:layout_marginStart="20dp"-->
+<!--                    android:layout_weight="1"-->
+<!--                    android:fontFamily="@font/sf_pro_display_regular"-->
+<!--                    android:text="@string/date_assigned"-->
+<!--                    android:textColor="#8C8C8C"-->
+<!--                    android:textSize="12sp" />-->
+
+
+<!--                <TextView-->
+<!--                    android:id="@+id/date1"-->
+<!--                    android:layout_width="wrap_content"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:layout_weight="9"-->
+<!--                    android:background="@android:color/transparent"-->
+<!--                    android:paddingStart="0dp"-->
+<!--                    android:paddingEnd="20dp"-->
+<!--                    android:text="@string/placeholder_date_time"-->
+<!--                    android:textAlignment="textEnd"-->
+<!--                    android:textColor="@android:color/white"-->
+<!--                    android:textSize="12sp" />-->
+
+<!--            </LinearLayout>-->
+
+<!--            <LinearLayout-->
+<!--                android:id="@+id/submissionFieldBackground"-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="40dp"-->
+<!--                android:layout_marginTop="15dp"-->
+<!--                android:background="@drawable/calendar_select_background"-->
+<!--                android:clickable="true"-->
+<!--                android:onClick="@{() ->  viewModel.onDateSubmitLayoutClick()}"-->
+<!--                android:paddingVertical="10dp"-->
+<!--                android:weightSum="10">-->
+
+<!--                <TextView-->
+<!--                    android:layout_width="wrap_content"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:layout_marginStart="20dp"-->
+<!--                    android:layout_weight="1"-->
+<!--                    android:fontFamily="@font/sf_pro_display_regular"-->
+<!--                    android:text="@string/date_submit"-->
+<!--                    android:textColor="#8C8C8C"-->
+<!--                    android:textSize="12sp" />-->
+
+
+<!--                <TextView-->
+<!--                    android:id="@+id/date2"-->
+<!--                    android:layout_width="wrap_content"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:layout_weight="9"-->
+<!--                    android:background="@android:color/transparent"-->
+<!--                    android:paddingStart="0dp"-->
+<!--                    android:paddingEnd="20dp"-->
+<!--                    android:text="@string/placeholder_date_time"-->
+<!--                    android:textAlignment="textEnd"-->
+<!--                    android:textColor="@android:color/white"-->
+<!--                    android:textSize="12sp" />-->
+
+<!--            </LinearLayout>-->
+
+
+<!--            &lt;!&ndash;            <Button&ndash;&gt;-->
+<!--            &lt;!&ndash;                android:id="@+id/buttonSubmitText"&ndash;&gt;-->
+<!--            &lt;!&ndash;                android:layout_width="match_parent"&ndash;&gt;-->
+<!--            &lt;!&ndash;                android:layout_height="40dp"&ndash;&gt;-->
+<!--            &lt;!&ndash;                android:layout_marginTop="20dp"&ndash;&gt;-->
+<!--            &lt;!&ndash;                android:background="@color/selectedCardBackground"&ndash;&gt;-->
+<!--            &lt;!&ndash;                android:fontFamily="@font/sf_pro_display_bold"&ndash;&gt;-->
+<!--            &lt;!&ndash;                android:text="@string/buttonSubmitText"&ndash;&gt;-->
+<!--            &lt;!&ndash;                android:textAllCaps="false"&ndash;&gt;-->
+<!--            &lt;!&ndash;                android:textColor="@color/UIKitBlue"&ndash;&gt;-->
+<!--            &lt;!&ndash;                android:textSize="12sp" />&ndash;&gt;-->
+
+
+<!--            <Button-->
+<!--                android:id="@+id/btnDeleteTask"-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="40dp"-->
+<!--                android:layout_marginTop="25dp"-->
+<!--                android:background="@color/selectedCardBackground"-->
+<!--                android:fontFamily="@font/sf_pro_display_bold"-->
+<!--                android:text="@string/btnDeleteTask"-->
+<!--                android:textAllCaps="false"-->
+<!--                android:textColor="@android:color/holo_red_dark"-->
+<!--                android:textSize="12sp"/>-->
+
+
+<!--        </LinearLayout>-->
+
+
+<!--        &lt;!&ndash; Saving progress dialogue &ndash;&gt;-->
+<!--        <androidx.cardview.widget.CardView-->
+<!--            android:id="@+id/savingDialogue"-->
+<!--            android:layout_width="150dp"-->
+<!--            android:layout_height="150dp"-->
+<!--            android:elevation="0dp"-->
+<!--            android:visibility="gone"-->
+<!--            app:cardBackgroundColor="@color/savingDialogueBackgroundColor"-->
+<!--            app:cardCornerRadius="10dp"-->
+<!--            app:cardElevation="0dp"-->
+<!--            app:layout_constraintBottom_toBottomOf="parent"-->
+<!--            app:layout_constraintEnd_toEndOf="parent"-->
+<!--            app:layout_constraintStart_toStartOf="parent"-->
+<!--            app:layout_constraintTop_toTopOf="parent">-->
+
+<!--            <LinearLayout-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:layout_gravity="center"-->
+<!--                android:background="@android:color/transparent"-->
+<!--                android:orientation="vertical">-->
+
+<!--                <ProgressBar-->
+<!--                    android:id="@+id/newRecordFragmentProgressBar"-->
+<!--                    android:layout_width="wrap_content"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:layout_gravity="center"-->
+<!--                    android:indeterminate="true"-->
+<!--                    android:indeterminateTint="@color/savingDialogueTextColor"-->
+<!--                    android:visibility="visible" />-->
+
+
+<!--                <TextView-->
+<!--                    android:layout_width="wrap_content"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:layout_marginTop="7dp"-->
+<!--                    android:fontFamily="@font/sf_pro_display_medium"-->
+<!--                    android:text="@string/saving_data"-->
+<!--                    android:textColor="@color/savingDialogueTextColor"/>-->
+<!--            </LinearLayout>-->
+
+<!--        </androidx.cardview.widget.CardView>-->
+
+<!--        &lt;!&ndash; Dialogue box &ndash;&gt;-->
+<!--        <androidx.constraintlayout.motion.widget.MotionLayout-->
+<!--            android:id="@+id/dialogBoxContainer"-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:clickable="false"-->
+<!--            android:layout_height="match_parent"-->
+<!--            app:layoutDescription="@xml/activity_record_xml_dialogboxcontainer_scene"-->
+<!--            app:layout_constraintBottom_toBottomOf="parent"-->
+<!--            app:layout_constraintEnd_toEndOf="parent"-->
+<!--            app:layout_constraintStart_toStartOf="parent"-->
+<!--            app:layout_constraintTop_toTopOf="parent">-->
+
+<!--            <LinearLayout-->
+<!--                android:clickable="false"-->
+<!--                android:id="@+id/backgroundTint"-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="match_parent"-->
+<!--                android:background="#000000"-->
+<!--                android:alpha="0"-->
+<!--                android:orientation="horizontal" />-->
+
+<!--            <androidx.cardview.widget.CardView-->
+<!--                android:id="@+id/dialogC"-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:backgroundTint="#88FFFFFF"-->
+<!--                app:cardCornerRadius="12dp"-->
+<!--                android:clickable="false"-->
+<!--                app:layout_constraintBottom_toBottomOf="parent"-->
+<!--                app:layout_constraintEnd_toEndOf="parent"-->
+<!--                app:layout_constraintStart_toStartOf="parent"-->
+<!--                app:layout_constraintTop_toTopOf="parent">-->
+
+<!--                <LinearLayout-->
+<!--                    android:id="@+id/ecg"-->
+<!--                    android:layout_width="250dp"-->
+<!--                    android:layout_height="match_parent"-->
+<!--                    android:layout_gravity="center_horizontal"-->
+<!--                    android:orientation="vertical"-->
+<!--                    android:paddingTop="10dp">-->
+
+<!--                    <TextView-->
+<!--                        android:layout_width="match_parent"-->
+<!--                        android:layout_height="wrap_content"-->
+<!--                        android:layout_marginHorizontal="15dp"-->
+<!--                        android:fontFamily="@font/sf_pro_display_bold"-->
+<!--                        android:paddingTop="5dp"-->
+<!--                        android:text="@string/delete_this_item"-->
+<!--                        android:textAlignment="center"-->
+<!--                        android:textColor="@android:color/black"-->
+<!--                        android:textSize="18sp" />-->
+
+<!--                    <TextView-->
+<!--                        android:layout_width="wrap_content"-->
+<!--                        android:layout_height="wrap_content"-->
+<!--                        android:layout_marginBottom="8dp"-->
+<!--                        android:paddingHorizontal="30dp"-->
+<!--                        android:text="@string/you_sure_you_wanna_delete_this"-->
+<!--                        android:textAlignment="center"-->
+<!--                        android:textColor="@android:color/black"-->
+<!--                        android:textSize="14sp" />-->
+
+<!--                    <ImageView-->
+<!--                        android:layout_width="match_parent"-->
+<!--                        android:layout_height="wrap_content"-->
+<!--                        android:scaleType="fitXY"-->
+<!--                        android:src="@drawable/ic_card_bottom_line" />-->
+
+
+<!--                    <LinearLayout-->
+<!--                        android:layout_width="match_parent"-->
+<!--                        android:layout_height="wrap_content"-->
+<!--                        android:layout_gravity="bottom"-->
+<!--                        android:weightSum="2">-->
+
+<!--                        <TextView-->
+<!--                            android:id="@+id/dbNegative"-->
+<!--                            android:layout_width="wrap_content"-->
+<!--                            android:layout_height="wrap_content"-->
+<!--                            android:layout_weight="1"-->
+<!--                            android:clickable="true"-->
+<!--                            android:textColor="@android:color/black"-->
+<!--                            android:fontFamily="@font/sf_pro_display_regular"-->
+<!--                            android:paddingVertical="10dp"-->
+<!--                            android:text="@string/btnCancel"-->
+<!--                            android:textAlignment="center" />-->
+
+<!--                        <TextView-->
+<!--                            android:id="@+id/dbPositive"-->
+<!--                            android:textColor="@android:color/black"-->
+<!--                            android:clickable="true"-->
+<!--                            android:layout_width="wrap_content"-->
+<!--                            android:layout_height="wrap_content"-->
+<!--                            android:layout_weight="1"-->
+<!--                            android:fontFamily="@font/sf_pro_display_bold"-->
+<!--                            android:paddingVertical="10dp"-->
+<!--                            android:text="@string/delete"-->
+<!--                            android:textAlignment="center" />-->
+
+<!--                    </LinearLayout>-->
+
+<!--                </LinearLayout>-->
+
+
+<!--            </androidx.cardview.widget.CardView>-->
+
+<!--        </androidx.constraintlayout.motion.widget.MotionLayout>-->
+
+
+<!--        &lt;!&ndash; Date picker view &ndash;&gt;-->
+<!--        <CalendarView-->
+<!--            android:id="@+id/datePickerView"-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_marginBottom="10dp"-->
+<!--            android:background="#191919"-->
+<!--            android:gravity="center"-->
+<!--            android:orientation="vertical"-->
+<!--            android:theme="@style/CalendarViewTheme"-->
+<!--            android:visibility="visible"-->
+<!--            app:layout_constraintEnd_toEndOf="parent"-->
+<!--            app:layout_constraintStart_toStartOf="parent"-->
+<!--            app:layout_constraintTop_toBottomOf="parent" />-->
+
+<!--    </androidx.constraintlayout.motion.widget.MotionLayout>-->
+
+
+</layout>

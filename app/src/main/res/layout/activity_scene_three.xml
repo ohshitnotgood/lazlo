@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/ml_root_layout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@android:color/black"
+    app:layoutDescription="@xml/activity_scene_one_scene"
+    tools:context=".boilerplate.login_forms.SceneThreeActivity">
+
+    <ImageView
+        android:id="@+id/uni_app_icon"
+        android:layout_width="74dp"
+        android:layout_height="74dp"
+        android:contentDescription="@string/app_icon"
+        android:src="@drawable/app_icc"
+        android:transitionName="uni_app_icon"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.12" />
+
+    <TextView
+        android:layout_marginBottom="5dp"
+        android:id="@+id/uni_form_title"
+        style="@style/UniversalSceneOne.Title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:transitionName="uni_form_title"
+        app:layout_constraintBottom_toTopOf="@id/uni_form_subtitle"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"/>
+
+    <TextView
+        android:id="@+id/uni_form_subtitle"
+        style="@style/UniversalSceneOne.Subtitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:transitionName="uni_form_subtitle"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.3"/>
+
+    <androidx.constraintlayout.widget.Barrier
+        android:id="@+id/verticalBarrier"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintVertical_bias="0.42"/>
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/formFields"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="20dp"
+        android:backgroundTint="@color/boilColor"
+        app:cardCornerRadius="@dimen/card_border_radius"
+        app:layout_constraintTop_toBottomOf="@id/verticalBarrier"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <androidx.constraintlayout.motion.widget.MotionLayout
+            android:id="@+id/passwordAnimation"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layoutDescription="@xml/activity_scene_three_xml_constraint_layout_scene">
+
+            <EditText
+                android:id="@+id/uni_edt_email"
+                style="@style/UniversalSceneOne.EditText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:alpha="1"
+                android:autofillHints="@string/email"
+                android:imeOptions="actionNext"
+                android:background="@android:color/transparent"
+                android:hint="@string/email_str"
+                android:inputType="textEmailAddress"
+                android:textAlignment="textStart"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <EditText
+                android:id="@+id/uni_edt_pass"
+                android:imeActionLabel="@string/login"
+                style="@style/UniversalSceneOne.EditText"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:alpha="1"
+                android:autofillHints="@string/pass"
+                android:background="@android:color/transparent"
+                android:hint="@string/pass_str"
+                android:inputType="textEmailAddress"
+                android:textAlignment="textStart"
+                app:layout_constraintTop_toBottomOf="@id/uni_edt_email"
+                app:layout_constraintBottom_toBottomOf="@id/uni_edt_email"/>
+
+        </androidx.constraintlayout.motion.widget.MotionLayout>
+
+
+    </androidx.cardview.widget.CardView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

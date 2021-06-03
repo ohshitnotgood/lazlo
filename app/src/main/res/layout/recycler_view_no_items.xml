@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@android:color/black"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:background="@android:color/black"
+        android:paddingVertical="20dp">
+
+        <TextView
+            android:id="@+id/tabTitleNoTasks"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_centerVertical="true"
+            android:layout_marginStart="13dp"
+            android:layout_toStartOf="@+id/btnAddNewRecordNoTitle"
+            android:fontFamily="@font/sf_pro_display_bold"
+            android:text="@string/btP3"
+            android:textColor="@color/rvTitleColor"
+            android:textSize="30sp" />
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/btnAddNewRecordNoTitle"
+            android:layout_width="28dp"
+            android:layout_height="28dp"
+            android:layout_alignParentEnd="true"
+            android:layout_centerVertical="true"
+            android:layout_marginEnd="17dp"
+            android:backgroundTint="#434343"
+            app:cardCornerRadius="322dp">
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:contentDescription="@string/userProfileDesc"
+                android:src="@drawable/ic_plus" />
+
+        </androidx.cardview.widget.CardView>
+    </RelativeLayout>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:text="@string/no_task_msg"
+        android:layout_marginHorizontal="60dp"
+        android:fontFamily="@font/sf_pro_display_medium"
+        android:textSize="14sp"
+        android:textAlignment="center"
+        android:textColor="#7A7A7A"/>
+
+</RelativeLayout>

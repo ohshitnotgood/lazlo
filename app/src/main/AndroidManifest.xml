@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="io.github.praanto__samadder.cocoa">
+
+    <uses-permission android:name="android.permission.VIBRATE" />
+
+    <application
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+        <activity android:name="io.github.praanto__samadder.cocoa.boilerplate.login_forms.SceneFourActivity"></activity>
+        <activity android:name="io.github.praanto__samadder.cocoa.boilerplate.login_forms.SceneThreeActivity" />
+        <activity android:name="io.github.praanto__samadder.cocoa.boilerplate.login_forms.SceneTwoActivity" />
+        <activity android:name="io.github.praanto__samadder.cocoa.boilerplate.login_forms.SceneOneActivity" />
+        <activity android:name=".task_editor.TaskEditorActivity" />
+
+        <receiver android:name=".receivers.TaskNotificationBroadcastReceiver" />
+
+        <activity android:name=".buffer.BufferActivity" />
+        <activity android:name=".experimental.LoginActivity" />
+        <activity
+            android:name=".login_form.WelcomeActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".new_record.NewRecordActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".dashboardActivity.DashboardActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/DashboardActivityTheme" />
+        <activity
+            android:name=".boo_hoo.BooHooWhore"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".login_form.LoginForm"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".experimental.Experimental"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".main_activity.MainActivity"
+            android:screenOrientation="portrait">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+    </application>
+
+</manifest>

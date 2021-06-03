@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.motion.widget.MotionLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/ml_root_layout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@android:color/black"
+    app:layoutDescription="@xml/activity_scene_four_scene"
+    tools:context=".boilerplate.login_forms.SceneFourActivity">
+
+    <ImageView
+        android:id="@+id/uni_app_icon"
+        android:layout_width="74dp"
+        android:layout_height="74dp"
+        android:contentDescription="@string/app_icon"
+        android:src="@drawable/app_icc"
+        android:transitionName="uni_app_icon"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.12" />
+
+    <TextView
+        android:id="@+id/uni_form_title"
+        style="@style/UniversalSceneOne.Title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="5dp"
+        android:transitionName="uni_form_title"
+        app:layout_constraintBottom_toTopOf="@id/uni_form_subtitle"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/uni_form_subtitle"
+        style="@style/UniversalSceneOne.Subtitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:transitionName="uni_form_subtitle"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.3" />
+
+
+    <!-- Login button -->
+    <androidx.cardview.widget.CardView
+        android:id="@+id/uni_btn_login"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginHorizontal="20dp"
+        android:backgroundTint="#165DC5"
+        app:cardCornerRadius="@dimen/card_border_radius"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/formFields"
+        app:layout_constraintBottom_toBottomOf="@id/formFields">
+
+
+        <TextView
+            style="@style/UniversalSceneOne.EditText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@android:color/transparent"
+            android:fontFamily="@font/sf_pro_display_medium"
+            android:text="@string/login_smaller_case"
+            android:textAlignment="center"
+            android:textAllCaps="false"
+            android:textColor="@android:color/white" />
+
+    </androidx.cardview.widget.CardView>
+
+    <androidx.constraintlayout.widget.Barrier
+        android:id="@+id/verticalBarrier"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.42" />
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/formFields"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="20dp"
+        android:backgroundTint="@color/boilColor"
+        app:cardCornerRadius="@dimen/card_border_radius"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/verticalBarrier">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <EditText
+                android:id="@+id/uni_edt_email"
+                style="@style/UniversalSceneOne.EditText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:alpha="1"
+                android:autofillHints="@string/email"
+                android:background="@android:color/transparent"
+                android:hint="@string/email_str"
+                android:imeOptions="actionNext"
+                android:inputType="textEmailAddress"
+                android:textAlignment="textStart"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <EditText
+                android:id="@+id/uni_edt_pass"
+                style="@style/UniversalSceneOne.EditText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:alpha="1"
+                android:autofillHints="@string/pass"
+                android:background="@android:color/transparent"
+                android:hint="@string/pass_str"
+                android:imeActionLabel="@string/login"
+                android:inputType="textPassword"
+                android:textAlignment="textStart" />
+
+        </LinearLayout>
+
+
+    </androidx.cardview.widget.CardView>
+
+
+</androidx.constraintlayout.motion.widget.MotionLayout>
